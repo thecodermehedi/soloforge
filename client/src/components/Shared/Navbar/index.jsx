@@ -1,6 +1,7 @@
 import {useState} from "react";
 import Container from "../Container";
 import {Link} from "react-router-dom";
+
 const Navbar = () => {
   const [state, setState] = useState(false);
   const navigation = [
@@ -10,12 +11,10 @@ const Navbar = () => {
     {title: "Contact", link: "/contact"},
   ];
   return (
-    <nav className="bg-white w-full border-b md:border-0 md:static">
+    <nav className="bg-white w-full border-b border-gray-900 md:static">
       <Container className="md:flex items-center justify-between">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <Link to="/" className="font-bold text-2xl">
-            Soloforge
-          </Link>
+          <h1 className="font-bold text-2xl">Soloforge</h1>
           <div className="md:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
@@ -67,17 +66,23 @@ const Navbar = () => {
               );
             })}
             <Link
-              to="/auth/signup"
-              className="py-3 text-white bg-black hover:rounded-xl transition ease-in-out duration-500 shadow md:hidden block"
+              to="/auth/login"
+              className="py-3 text-white bg-black duration-300 hover:rounded-lg shadow hover:shadow-none md:hidden block"
             >
-              Sign Up
+              Login
             </Link>
           </ul>
         </div>
         <div className="hidden md:inline-block">
           <Link
-            to=""
-            className="py-3 px-4 text-white bg-black hover:rounded-xl transition ease-in-out duration-500 shadow"
+            to="/auth/login"
+            className="py-3 px-4 border border-black duration-300 hover:bg-black hover:text-white shadow hover:shadow-none mr-2"
+          >
+            Login
+          </Link>
+          <Link
+            to="/auth/signup"
+            className="py-3 px-4 text-white bg-black duration-300 hover:rounded-lg shadow hover:shadow-none"
           >
             Sign Up
           </Link>
