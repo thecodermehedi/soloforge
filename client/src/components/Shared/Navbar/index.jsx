@@ -14,7 +14,9 @@ const Navbar = () => {
     <nav className="bg-white w-full  md:static">
       <Container className="md:flex items-center justify-between">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
-          <h1 className="font-bold text-2xl">Soloforge</h1>
+          <Link to="/" className="font-bold text-2xl">
+            Soloforge
+          </Link>
           <div className="md:hidden">
             <button
               className="text-gray-700 outline-none p-2 rounded-md focus:border-gray-400 focus:border"
@@ -60,7 +62,7 @@ const Navbar = () => {
           <ul className="justify-center items-center  text-center space-y-8 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <li key={idx} className="text-gray-600 hover:text-black">
+                <li key={idx} className="text-black/90 hover:text-black/100">
                   <a href={item.link}>{item.title}</a>
                 </li>
               );
