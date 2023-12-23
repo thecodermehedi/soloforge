@@ -3,7 +3,6 @@ import useAuth from "../../../hooks/useAuth";
 
 const DashNav = ({toggleSidebar, isSidebarOpen}) => {
   const {user, logOut} = useAuth();
-  console.log(user);
   return (
     <>
       <div className="h-14"></div>
