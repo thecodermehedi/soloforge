@@ -15,7 +15,7 @@ const Features = () => {
           </p>
         </div>
         <div className="py-16 px-10">
-          <img src="https://via.placeholder.com/500x600" className="" alt="" />
+          <img src="/responsive.svg" className="" alt="" />
         </div>
       </Container>
     </section>
