@@ -11,7 +11,7 @@ const Navbar = () => {
     {title: "Contact", link: "/contact"},
   ];
   return (
-    <nav className="bg-white w-full border-b border-gray-900 md:static">
+    <nav className="bg-white w-full  md:static">
       <Container className="md:flex items-center justify-between">
         <div className="flex items-center justify-between py-3 md:py-5 md:block">
           <h1 className="font-bold text-2xl">Soloforge</h1>
@@ -67,7 +67,7 @@ const Navbar = () => {
             })}
             <Link
               to="/auth/login"
-              className="py-3 text-white bg-black duration-300 hover:rounded-lg shadow hover:shadow-none md:hidden block"
+              className="py-3 text-white bg-black duration-300 hover:rounded-lg md:hidden block"
             >
               Login
             </Link>
@@ -76,13 +76,13 @@ const Navbar = () => {
         <div className="hidden md:inline-block">
           <Link
             to="/auth/login"
-            className="py-3 px-4 border border-black duration-300 hover:bg-black hover:text-white shadow hover:shadow-none mr-2"
+            className="py-3 px-4 border border-black duration-300 hover:bg-black hover:text-white mr-2"
           >
             Login
           </Link>
           <Link
             to="/auth/signup"
-            className="py-3 px-4 text-white bg-black duration-300 hover:rounded-lg shadow hover:shadow-none"
+            className="py-3 px-4 text-white bg-black duration-300 hover:rounded-lg"
           >
             Sign Up
           </Link>
