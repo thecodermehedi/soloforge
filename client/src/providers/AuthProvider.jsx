@@ -1,6 +1,7 @@
 import {createContext, useEffect, useState} from "react";
 import {
   GoogleAuthProvider,
+  GithubAuthProvider,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
@@ -11,6 +12,7 @@ import {
 import auth from "../config/firebase";
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 export const AuthContext = createContext(null);
 
 // eslint-disable-next-line react/prop-types
@@ -32,6 +34,11 @@ const AuthProvider = ({children}) => {
     setIsUserLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
+  const loginWithGithub = () => {
+    setIsUserLoading(true);
+    return signInWithPopup(auth, githubProvider);
+  }
 
   const logOut = async () => {
     setIsUserLoading(true);
@@ -64,7 +71,8 @@ const AuthProvider = ({children}) => {
     isUserLoading,
     updateUserProfile,
     setIsUserLoading,
-    loginWithGoogle
+    loginWithGoogle,
+    loginWithGithub
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
