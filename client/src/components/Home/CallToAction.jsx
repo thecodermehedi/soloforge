@@ -26,7 +26,7 @@ const CallToAction = () => {
           </div>
         </div>
         <div className="py-16 px-10">
-          <img src="https://via.placeholder.com/400x300" className="" alt="" />
+          <img src="/cta.svg" className="" alt="" />
         </div>
       </Container>
     </section>
