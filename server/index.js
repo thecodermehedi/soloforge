@@ -52,6 +52,7 @@ const connectToMongoDB = async () => {
       try {
         const email = req.body.email;
         const filter = {email: email};
+        console.log(req.body);
         const tasks = await tasksCollection.find(filter).toArray();
         res.send(tasks);
       } catch (error) {
