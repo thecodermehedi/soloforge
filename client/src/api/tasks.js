@@ -6,7 +6,8 @@ export const createTask = async (task) => {
 };
 
 export const getTasks = async (email) => {
-  const {data} = await axiosPublic("tasks", email);
   console.log(email);
+  const {data} = await axiosPublic(`tasks?email=${email}`);
+  console.log(data);
   return data;
 };
