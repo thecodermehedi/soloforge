@@ -42,26 +42,16 @@ const connectToMongoDB = async () => {
     //! MongoDB Collections
     const db = client.db("soloforgeDB");
     const tasksCollection = db.collection("tasks");
+    const ongoingCollection = db.collection("ongoing");
+    const completedCollection = db.collection("completed");
 
     //! SERVER IS RUNNING
     app.get("/", (req, res) => {
       res.send("Soloforge Server is running");
     });
 
-    //! GET ALL Tasks
-    // http://localhost:3000/api/v1/tasks
-    app.get("/api/v1/tasks", async (req, res) => {
-      try {
-        const tasks = await tasksCollection.find().toArray();
-        res.send(tasks);
-      } catch (error) {
-        console.error(error);
-        res.status(500).send({message: "An error occurred"});
-      }
-    });
-
-    //! GET TASKS BY EMAIL
-    // http://localhost:3000/api/v1/tasks?email=
+    //! GET ALL TASKS OF A USER
+    // http://localhost:3000/api/v1/tasks?email=abc%40gmail.com
     app.get("/api/v1/tasks", async (req, res) => {
       try {
         const email = req.query.email;
@@ -74,30 +64,12 @@ const connectToMongoDB = async () => {
       }
     });
 
-    //! POST A JOB
+    //! CREATE A TASK
     // http://localhost:3000/api/v1/tasks
     app.post("/api/v1/tasks", async (req, res) => {
       try {
         const task = req.body;
         const result = await tasksCollection.insertOne(task);
-        res.send(result);
-      } catch (error) {
-        console.error(error);
-        res.status(500).send({message: "An error occurred"});
-      }
-    });
-
-    //! UPDATE A TASK
-    // http://localhost:3000/api/v1/task/654713acdfaace3a2427f482
-    app.patch("/api/v1/task/:id", async (req, res) => {
-      try {
-        const id = req.params.id;
-        const job = req.body;
-        const filter = {_id: new ObjectId(id)};
-        const updateDocument = {
-          $set: job,
-        };
-        const result = await tasksCollection.updateOne(filter, updateDocument);
         res.send(result);
       } catch (error) {
         console.error(error);
@@ -118,6 +90,22 @@ const connectToMongoDB = async () => {
         res.status(500).send({message: "An error occurred"});
       }
     });
+
+    //! UPDATE A TASK STATUS
+    // http://localhost:3000/api/v1/task/654713acdfaace3a2427f482
+    app.patch("/api/v1/task/:id", async (req, res) => {
+      try {
+        const id = req.params.id;
+        const filter = {_id: new ObjectId(id)};
+        const update = {$set: {status: req.body.status}};
+        const result = await tasksCollection.updateOne(filter, update);
+        res.send(result);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send({message: "An error occurred"});
+      }
+    });
+    
   } catch (error) {
     console.error("Failed to connect to MongoDB", error);
     process.exit(1);
