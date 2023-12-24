@@ -94,7 +94,7 @@ const DashboardLayout = () => {
   return (
     <>
       <DashNav toggleSidebar={toggleSidebar} isSidebarOpen={isSidebarOpen} />
-      <SideBar SideNav={navigation} isSidebarOpen={isSidebarOpen} />
+      <SideBar SideNav={navigation} isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar}/>
       <Container className="sm:ml-64 min-h-screen rounded-lg mt-5">
         <Outlet />
       </Container>

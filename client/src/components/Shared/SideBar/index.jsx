@@ -1,7 +1,7 @@
 import {NavLink} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
-const SideBar = ({SideNav, isSidebarOpen}) => {
+const SideBar = ({SideNav, isSidebarOpen, toggleSidebar}) => {
   const {logOut} = useAuth();
   return (
     <aside
@@ -14,7 +14,7 @@ const SideBar = ({SideNav, isSidebarOpen}) => {
       <div className="h-screen px-3 pb-4 overflow-y-auto bg-gray-50 text-black pt-5">
         <ul className="space-y-2 font-medium">
           {SideNav?.map((item, index) => (
-            <li key={index} className="group ">
+            <li key={index} className="group " onClick={toggleSidebar}>
               <NavLink
                 to={item.path}
                 end={true}
