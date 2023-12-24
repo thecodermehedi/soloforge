@@ -18,7 +18,7 @@ const CallToAction = () => {
               Sign Up
             </Link>
             <Link
-              to="/auth/signup"
+              to="/auth/login"
               className="block py-3 px-4 text-center text-black hover:text-white font-medium duration-300 bg-white hover:bg-black border border-black"
             >
               Log In
