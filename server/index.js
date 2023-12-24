@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const {MongoClient, ServerApiVersion, ObjectId} = require("mongodb");
+const morgan = require("morgan");
 
 //! Application Settings
 const app = express();
@@ -19,6 +20,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use(morgan("dev"));
 
 //! MongoDB URI
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.u0aecfc.mongodb.net/?retryWrites=true&w=majority`;
@@ -50,9 +52,20 @@ const connectToMongoDB = async () => {
     // http://localhost:3000/api/v1/tasks
     app.get("/api/v1/tasks", async (req, res) => {
       try {
-        const email = req.body.email;
+        const tasks = await tasksCollection.find().toArray();
+        res.send(tasks);
+      } catch (error) {
+        console.error(error);
+        res.status(500).send({message: "An error occurred"});
+      }
+    });
+
+    //! GET TASKS BY EMAIL
+    // http://localhost:3000/api/v1/tasks?email=
+    app.get("/api/v1/tasks", async (req, res) => {
+      try {
+        const email = req.query.email;
         const filter = {email: email};
-        console.log(req.body);
         const tasks = await tasksCollection.find(filter).toArray();
         res.send(tasks);
       } catch (error) {
