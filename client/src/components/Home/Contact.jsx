@@ -73,7 +73,7 @@ const Contact = () => {
   ];
 
   return (
-    <main className="py-28 ">
+    <main className="py-16 lg:py-28">
       <Container className="text-center">
         <div className="space-y-3">
           <p className="text-3xl font-semibold sm:text-4xl">Contact Us</p>

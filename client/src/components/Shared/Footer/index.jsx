@@ -8,8 +8,9 @@ const Footer = () => {
     {title: "Cookies Settings", link: "#"},
   ];
   return (
-    <footer className="py-20">
-      <Container className="flex flex-col md:flex-row items-center justify-between gap-8">
+    <footer>
+      <hr className=" mx-10 border border-gray-300" />
+      <Container className="flex flex-col md:flex-row mt-10 lg:mt-20 items-center justify-between gap-8">
         <Link to="/" className="font-bold text-2xl">
           Soloforge
         </Link>
@@ -18,16 +19,16 @@ const Footer = () => {
             <Link
               key={index}
               to={link.link}
-              className="text-gray-700 hover:text-black mx-2 underline"
+              className="text-black/90 hover:text-black/100 mx-2 underline"
             >
               {link.title}
             </Link>
           ))}
         </div>
-        <div className="flex items-center gap-x-6 text-gray-400">
-          <Link to="#">
+        <div className="flex items-center gap-x-6">
+          <Link to="https://web.facebook.com/thecodermehedi" target="_blank">
             <svg
-              className="w-6 h-6 text-gray-700 hover:text-black duration-150"
+              className="w-6 h-6 text-black/90 hover:text-black/100 duration-300 transition ease-in-out"
               fill="none"
               viewBox="0 0 48 48"
             >
@@ -44,9 +45,9 @@ const Footer = () => {
               </defs>
             </svg>
           </Link>
-          <Link to="#">
+          <Link to="https://twitter.com/thecodermehedi" target="_blank">
             <svg
-              className="w-6 h-6 text-gray-700 hover:text-black duration-150"
+              className="w-6 h-6 text-black/90 hover:text-black/100 duration-300 transition ease-in-out"
               fill="none"
               viewBox="0 0 48 48"
             >
@@ -63,9 +64,9 @@ const Footer = () => {
               </defs>
             </svg>
           </Link>
-          <Link to="#">
+          <Link to="https://github.com/thecodermehedi" target="_blank">
             <svg
-              className="w-6 h-6 text-gray-700 hover:text-black duration-150"
+              className="w-6 h-6 text-black/90 hover:text-black/100 duration-300 transition ease-in-out"
               fill="none"
               viewBox="0 0 48 48"
             >
@@ -84,9 +85,9 @@ const Footer = () => {
               </defs>
             </svg>
           </Link>
-          <Link to="#">
+          <Link to="https://www.instagram.com/thecodermehedi" target="_blank">
             <svg
-              className="w-6 h-6 text-gray-700 hover:text-black duration-150"
+              className="w-6 h-6 text-black/90 hover:text-black/100 duration-300 transition ease-in-out"
               fill="currentColor"
               viewBox="0 0 48 48"
             >
@@ -103,9 +104,11 @@ const Footer = () => {
           </Link>
         </div>
       </Container>
-      <hr className="border mx-10 border-gray-300 mt-10 lg:mt-20" />
-      <div className="text-center text-gray-600 mt-10">
-        <p className="text-xs sm:text-sm md:text-base lg:text-lg">Copyright © 2023 Soloforge</p>
+      <hr className=" mx-10 border border-gray-300 mt-10 lg:mt-20" />
+      <div className="text-center text-gray-600 my-10">
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg">
+          Copyright © 2023 Soloforge
+        </p>
       </div>
     </footer>
   );

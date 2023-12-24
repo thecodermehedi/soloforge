@@ -3,7 +3,7 @@ import Container from "../Shared/Container";
 
 const Benefit = () => {
   return (
-    <section className="mt-5 h-screen">
+    <section className="lg:mt-14">
       <Container className="gap-x-12 items-center justify-between overflow-hidden md:flex">
         <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
           <h4 className="font-medium">Efficiency</h4>
@@ -47,7 +47,7 @@ const Benefit = () => {
             </Link>
           </div>
         </div>
-        <div className="py-16 px-10">
+        <div className="py-10 lg:py-16 lg:px-10">
           <img src="/task.svg" className="" alt="" />
         </div>
       </Container>

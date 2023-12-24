@@ -2,10 +2,10 @@ import {Link} from "react-router-dom";
 import Container from "../Shared/Container";
 const Banner = () => {
   return (
-    <section className="mt-5">
-      <Container className="gap-x-12 items-center justify-between overflow-hidden md:flex">
+    <section className="my-5">
+      <Container className="gap-x-12 items-center justify-between overflow-hidden flex flex-col md:flex-row">
         <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
-          <h2 className="text-4xl font-extrabold md:text-5xl">
+          <h2 className="text-3xl font-bold  md:text-4xl lg:text-5xl">
             Boost Your Efficiency with Soloforge: Start Now!
           </h2>
           <p>Efficiently manage tasks with ease and collaboration.</p>
@@ -24,11 +24,10 @@ const Banner = () => {
             </Link>
           </div>
         </div>
-        <div className="flex-none mt-14 md:mt-0 md:max-w-xl hidden md:block">
-          <img src="/banner-image.svg" className="mt-5" alt="" />
+        <div className="my-5">
+          <img src="/banner-image.svg" className="my-5 md:my-0" alt="banner-photo" />
         </div>
       </Container>
-     
     </section>
   );
 };
