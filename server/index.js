@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",
+      // "http://localhost:5173",
       "https://Soloforge.vercel.app",
       "https://Soloforge-client.web.app",
       "https://Soloforge-client.firebaseapp.com",
@@ -42,8 +42,6 @@ const connectToMongoDB = async () => {
     //! MongoDB Collections
     const db = client.db("soloforgeDB");
     const tasksCollection = db.collection("tasks");
-    const ongoingCollection = db.collection("ongoing");
-    const completedCollection = db.collection("completed");
 
     //! SERVER IS RUNNING
     app.get("/", (req, res) => {
