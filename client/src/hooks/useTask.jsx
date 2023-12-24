@@ -37,6 +37,13 @@ const useTask = () => {
   const completedTasks = tasks?.filter((task) => task.status === "completed");
   const deletedTasks = tasks?.filter((task) => task.status === "deleted");
 
+  const tasksCount = {
+    todo: todoTasks?.length,
+    ongoing: ongoingTasks?.length,
+    completed: completedTasks?.length,
+    total: tasks?.length,
+  };
+
   return {
     todoTasks,
     ongoingTasks,
@@ -45,6 +52,7 @@ const useTask = () => {
     deleteTaskFn,
     deletedTasks,
     updateTaskStatusFn,
+    tasksCount
   };
 };
 
