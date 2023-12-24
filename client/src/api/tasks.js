@@ -1,21 +1,21 @@
-import axiosPublic from "./axiosPublic";
+import axiosSecure from "./axiosSecure";
 
 export const createTask = async (task) => {
-  const {data} = await axiosPublic.post("tasks", task);
+  const {data} = await axiosSecure.post("tasks", task);
   return data;
 };
 
 export const getTasks = async (email) => {
-  const {data} = await axiosPublic(`tasks?email=${email}`);
+  const {data} = await axiosSecure(`tasks?email=${email}`);
   return data;
 };
 
 export const deleteTask = async (id) => {
-  const {data} = await axiosPublic.delete(`task/${id}`);
+  const {data} = await axiosSecure.delete(`task/${id}`);
   return data;
 };
 
 export const updateTaskStatus = async (id, status) => {
-  const {data} = await axiosPublic.patch(`task/${id}`, {status});
+  const {data} = await axiosSecure.patch(`task/${id}`, {status});
   return data;
 };
