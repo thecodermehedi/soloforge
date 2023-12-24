@@ -16,6 +16,7 @@ import BlockRoute from "./BlockRoute";
 import PrivateRoute from "./PrivateRoute";
 import Tasks from "../pages/Tasks";
 import CreateTask from "../pages/CreateTask";
+import PreviousTasks from "../pages/Previous";
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "create-task",
+        element: (
+          <PrivateRoute>
+            <CreateTask />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "tasks",
         element: (
           <PrivateRoute>
@@ -84,10 +93,10 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "create-task",
+        path: "previous-tasks",
         element: (
           <PrivateRoute>
-            <CreateTask />
+            <PreviousTasks />
           </PrivateRoute>
         ),
       },
