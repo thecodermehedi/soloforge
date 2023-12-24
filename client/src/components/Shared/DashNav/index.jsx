@@ -2,8 +2,7 @@ import {Link} from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
 const DashNav = ({toggleSidebar, isSidebarOpen}) => {
-  const {user, logOut} = useAuth();
-  console.log(user?.photoURL);
+  const {user} = useAuth();
   return (
     <>
       <div className="h-14"></div>
@@ -107,15 +106,9 @@ const DashNav = ({toggleSidebar, isSidebarOpen}) => {
               </p>
               <img
                 src={user?.photoURL || "https://via.placeholder.com/150"}
-                className="rounded-full h-8 hidden sm:block"
+                className="rounded-full h-8"
                 alt={user?.displayName.split(" ")[0].charAt(0)}
               />
-              <button
-                onClick={logOut}
-                className="py-2 px-4 bg-black hover:rounded-lg text-white"
-              >
-                Logout
-              </button>
             </div>
           </div>
         </div>
