@@ -6,8 +6,16 @@ export const createTask = async (task) => {
 };
 
 export const getTasks = async (email) => {
-  console.log(email);
   const {data} = await axiosPublic(`tasks?email=${email}`);
-  console.log(data);
+  return data;
+};
+
+export const deleteTask = async (id) => {
+  const {data} = await axiosPublic.delete(`task/${id}`);
+  return data;
+};
+
+export const updateTaskStatus = async (id, status) => {
+  const {data} = await axiosPublic.patch(`task/${id}`, {status});
   return data;
 };
