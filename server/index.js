@@ -8,19 +8,29 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 //! Middlewares
-app.use(
-  cors({
-    origin: [
-      // "http://localhost:5173",
-      "https://Soloforge.vercel.app",
-      "https://Soloforge-client.web.app",
-      "https://Soloforge-client.firebaseapp.com",
-    ],
+let corsOptions;
+if (process.env.NODE_ENV === "production") {
+  corsOptions = {
+    origin: [process.env.PROD_ORIGIN_URL],
     credentials: true,
-  })
-);
+  };
+  console.log(process.env.NODE_ENV, process.env.PROD_ORIGIN_URL);
+} else {
+  corsOptions = {
+    origin: [process.env.DEV_ORIGIN_URL],
+    credentials: true,
+  };
+  console.log(process.env.NODE_ENV, process.env.DEV_ORIGIN_URL);
+}
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(morgan("dev"));
+
+//! Logging
+if(process.env.NODE_ENV === "production") {
+  app.use(morgan("combined"));
+} else {
+  app.use(morgan("dev"));
+}
 
 //! MongoDB URI
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.u0aecfc.mongodb.net/?retryWrites=true&w=majority`;
@@ -103,7 +113,6 @@ const connectToMongoDB = async () => {
         res.status(500).send({message: "An error occurred"});
       }
     });
-    
   } catch (error) {
     console.error("Failed to connect to MongoDB", error);
     process.exit(1);
