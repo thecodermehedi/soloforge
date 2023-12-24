@@ -106,7 +106,7 @@ const DashNav = ({toggleSidebar, isSidebarOpen}) => {
               </p>
               <img
                 src={user?.photoURL || "https://via.placeholder.com/150"}
-                className="rounded-full h-8"
+                className="rounded-full size-8"
                 alt={user?.displayName.split(" ")[0].charAt(0)}
               />
             </div>
