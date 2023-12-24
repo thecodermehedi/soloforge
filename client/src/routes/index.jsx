@@ -6,7 +6,6 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Dashboard from "../pages/Dashboard";
-import Profile from "../pages/Profile";
 import Features from "../pages/Features";
 import Pricing from "../pages/Pricing";
 import Login from "../pages/Login";
@@ -65,14 +64,6 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Dashboard />
-          </PrivateRoute>
-        ),
-      },
-      {
-        path: "profile",
-        element: (
-          <PrivateRoute>
-            <Profile />
           </PrivateRoute>
         ),
       },
