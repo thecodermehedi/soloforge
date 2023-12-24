@@ -1,6 +1,8 @@
 import {NavLink} from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
 
 const SideBar = ({SideNav, isSidebarOpen}) => {
+  const {logOut} = useAuth();
   return (
     <aside
       id="logo-sidebar"
@@ -19,7 +21,7 @@ const SideBar = ({SideNav, isSidebarOpen}) => {
                 className={({isActive}) =>
                   isActive
                     ? "flex items-center p-2 space-x-2 w-full bg-black text-white"
-                    : "flex items-center p-2 space-x-2 w-full btn-hover"
+                    : "flex items-center p-2 space-x-2 w-full hover:bg-black hover:text-white transition duration-300 ease-in-out"
                 }
               >
                 <span>{item.icon}</span>
@@ -27,6 +29,32 @@ const SideBar = ({SideNav, isSidebarOpen}) => {
               </NavLink>
             </li>
           ))}
+          <button
+            onClick={logOut}
+            className="flex items-center p-2 space-x-2 w-full hover:bg-black hover:text-white transition duration-300 ease-in-out border bg-gray-200"
+          >
+            <span>
+              <svg
+                className="size-5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                >
+                  <path d="M14 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-2" />
+                  <path d="M9 12h12l-3-3m0 6l3-3" />
+                </g>
+              </svg>
+            </span>
+            <span>Logout</span>
+          </button>
         </ul>
       </div>
     </aside>
