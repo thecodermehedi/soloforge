@@ -11,8 +11,14 @@ const CreateTask = () => {
     const toastId = toast.loading("Creating task...");
     const {title, priority, date, desc} = data;
     const deadline = date.split("-").reverse().join("-");
-    const task = {title, priority, deadline, desc, email: user?.email};
-    console.log(task);
+    const task = {
+      title,
+      priority,
+      deadline,
+      desc,
+      email: user?.email,
+      status: "todo",
+    };
     try {
       await createTaskFn(task);
       toast.success("Task created", {id: toastId});
