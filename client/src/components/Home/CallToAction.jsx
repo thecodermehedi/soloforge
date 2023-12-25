@@ -38,7 +38,7 @@ const CallToAction = () => {
           data-aos-delay="600"
           data-aos-duration="1000"
         >
-          <img src="/cta.svg" className="" alt="" />
+          <img src="/devs.svg" className="w-4/5" alt="" />
         </div>
       </Container>
     </section>
