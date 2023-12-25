@@ -5,7 +5,12 @@ const CallToAction = () => {
   return (
     <section className="my-5">
       <Container className="gap-x-12 items-center justify-between overflow-hidden md:flex">
-        <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+        <div
+          className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl"
+          data-aos="fade-right"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
           <h2 className="text-2xl font-bold  md:text-3xl text-black">
             Unlock Your Task <br /> Management Potential.
           </h2>
@@ -25,7 +30,12 @@ const CallToAction = () => {
             </Link>
           </div>
         </div>
-        <div className="py-10 lg:py-16 lg:px-10">
+        <div
+          className="py-10 lg:py-16 lg:px-10"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
           <img src="/cta.svg" className="" alt="" />
         </div>
       </Container>
