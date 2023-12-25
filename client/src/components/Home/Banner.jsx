@@ -4,17 +4,28 @@ const Banner = () => {
   return (
     <section className="my-5">
       <Container className="gap-x-12 items-center justify-between overflow-hidden flex flex-col md:flex-row">
-        <div
-          className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl"
-          data-aos="fade-right"
-          data-aos-delay="600"
-          data-aos-duration="1000"
-        >
-          <h2 className="text-3xl font-bold  md:text-4xl lg:text-5xl">
+        <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+          <h2
+            className="text-3xl font-bold  md:text-4xl lg:text-5xl"
+            data-aos="fade-right"
+            data-aos-delay="600"
+            data-aos-duration="1000"
+          >
             Boost Your Efficiency with Soloforge: Start Now!
           </h2>
-          <p>Efficiently manage tasks with ease and collaboration.</p>
-          <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
+          <p
+            data-aos="fade-right"
+            data-aos-delay="700"
+            data-aos-duration="1000"
+          >
+            Efficiently manage tasks with ease and collaboration.
+          </p>
+          <div
+            className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0"
+            data-aos="fade-right"
+            data-aos-delay="800"
+            data-aos-duration="1000"
+          >
             <Link
               to="/auth/signup"
               className="block py-3 px-4 text-center text-white font-medium bg-black duration-300 hover:rounded-lg shadow-lg hover:shadow-none"
@@ -32,7 +43,7 @@ const Banner = () => {
         <div
           className="my-5"
           data-aos="fade-left"
-          data-aos-delay="600"
+          data-aos-delay="900"
           data-aos-duration="1000"
         >
           <img

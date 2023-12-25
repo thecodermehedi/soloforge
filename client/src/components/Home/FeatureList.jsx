@@ -22,7 +22,7 @@ const FeatureList = () => {
           <div
             className="space-y-4 pl-6"
             data-aos="fade-right"
-            data-aos-delay="600"
+            data-aos-delay="700"
             data-aos-duration="1000"
           >
             <h2 className="text-2xl font-bold  md:text-3xl text-black">
@@ -36,7 +36,7 @@ const FeatureList = () => {
           <div
             className="space-y-4 pl-6"
             data-aos="fade-right"
-            data-aos-delay="600"
+            data-aos-delay="800"
             data-aos-duration="1000"
           >
             <h2 className="text-2xl font-bold  md:text-3xl text-black">
@@ -49,12 +49,7 @@ const FeatureList = () => {
             </p>
           </div>
         </div>
-        <div
-          className="py-10 lg:py-16 lg:px-10"
-          data-aos="fade-down"
-          data-aos-delay="600"
-          data-aos-duration="1000"
-        >
+        <div className="py-10 lg:py-16 lg:px-10" data-aos="fade-down">
           <img src="/dashboard.svg" className="" alt="" />
         </div>
       </Container>
