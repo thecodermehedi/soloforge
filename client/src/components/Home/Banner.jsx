@@ -4,7 +4,12 @@ const Banner = () => {
   return (
     <section className="my-5">
       <Container className="gap-x-12 items-center justify-between overflow-hidden flex flex-col md:flex-row">
-        <div className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl">
+        <div
+          className="flex-none space-y-5 px-4 sm:max-w-lg md:px-0 lg:max-w-xl"
+          data-aos="fade-right"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
           <h2 className="text-3xl font-bold  md:text-4xl lg:text-5xl">
             Boost Your Efficiency with Soloforge: Start Now!
           </h2>
@@ -24,8 +29,17 @@ const Banner = () => {
             </Link>
           </div>
         </div>
-        <div className="my-5">
-          <img src="/banner-image.svg" className="my-5 md:my-0" alt="banner-photo" />
+        <div
+          className="my-5"
+          data-aos="fade-left"
+          data-aos-delay="600"
+          data-aos-duration="1000"
+        >
+          <img
+            src="/banner-image.svg"
+            className="my-5 md:my-0"
+            alt="banner-photo"
+          />
         </div>
       </Container>
     </section>
