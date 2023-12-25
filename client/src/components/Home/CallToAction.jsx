@@ -12,9 +12,11 @@ const CallToAction = () => {
           data-aos-duration="1000"
         >
           <h2 className="text-2xl font-bold  md:text-3xl text-black">
-            Unlock Your Task <br /> Management Potential.
+            Unlock Your Development Potential.
           </h2>
-          <p>Sign up or log in to access the full task management dashboard.</p>
+          <p>
+            Sign up or log in to access the full dashboard for developers.
+          </p>
           <div className="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0">
             <Link
               to="/auth/signup"
